@@ -1,0 +1,133 @@
+{
+  "transactions_structure": {
+    "description": "Estrutura melhorada das transações com dados mais realistas",
+    "example": {
+      "transaction_id": "txn_a1b2c3d4e5f6",
+      "customer_id": "cust_xyz789ab",
+      "amount": 1250.50,
+      "currency": "BRL",
+      "transaction_date": "2024-01-15",
+      "due_date": "2024-02-15",
+      "payment_terms": "30_days",
+      "status": "pending",
+      "metadata": {
+        "product_category": "electronics",
+        "sales_rep": "rep_001",
+        "channel": "online",
+        "discount_applied": 10,
+        "installments": 3
+      }
+    },
+    "improvements": [
+      "IDs únicos não sequenciais (UUIDs)",
+      "Valores variados e realistas",
+      "Datas de vencimento diferentes das transações",
+      "Múltiplas moedas (BRL, USD, EUR)",
+      "Metadados ricos para análise",
+      "Status variados das transações",
+      "Dados inconsistentes para testar robustez"
+    ]
+  },
+  "payments_structure": {
+    "description": "Estrutura melhorada dos pagamentos com cenários complexos",
+    "example": {
+      "payment_id": "pay_f6e5d4c3b2a1",
+      "transaction_id": "txn_a1b2c3d4e5f6",
+      "customer_id": "cust_xyz789ab",
+      "amount_paid": 1250.50,
+      "currency": "BRL",
+      "payment_date": "2024-02-20",
+      "payment_method": "pix",
+      "payment_type": "full",
+      "status": "completed",
+      "metadata": {
+        "processor": "stone",
+        "fee_amount": 25.01,
+        "reference_number": "ref_123456",
+        "ip_address": "192.168.1.100",
+        "user_agent": "Mozilla/5.0..."
+      }
+    },
+    "improvements": [
+      "Pagamentos parciais múltiplos",
+      "Pagamentos antecipados e atrasados",
+      "Diferentes métodos de pagamento",
+      "Metadados de processamento",
+      "Status de pagamento variados",
+      "Taxas de processamento",
+      "Informações de auditoria"
+    ]
+  },
+  "delinquency_scenarios": {
+    "description": "Cenários de inadimplência mais desafiadores implementados",
+    "scenarios": [
+      {
+        "type": "no_payment",
+        "description": "Transações sem nenhum pagamento",
+        "percentage": "~10%"
+      },
+      {
+        "type": "partial_payments",
+        "description": "Múltiplos pagamentos parciais com possíveis atrasos",
+        "percentage": "~15%"
+      },
+      {
+        "type": "late_payments",
+        "description": "Pagamentos completos com atrasos variados (1-120 dias)",
+        "percentage": "~20%"
+      },
+      {
+        "type": "early_payments",
+        "description": "Pagamentos antecipados",
+        "percentage": "~8%"
+      },
+      {
+        "type": "overpayments",
+        "description": "Pagamentos acima do valor devido",
+        "percentage": "~2%"
+      },
+      {
+        "type": "multiple_transactions_per_customer",
+        "description": "Clientes com múltiplas transações para análise de padrão",
+        "percentage": "~30% dos clientes"
+      }
+    ]
+  },
+  "data_quality_challenges": {
+    "description": "Problemas de qualidade de dados adicionados para testar robustez",
+    "issues": [
+      "Valores nulos em campos críticos",
+      "Tipos de dados incorretos",
+      "Datas inválidas",
+      "Valores negativos",
+      "Campos faltantes",
+      "Inconsistências entre transações e pagamentos"
+    ],
+    "rate": "~3% dos registros têm algum problema"
+  },
+  "business_rules_to_test": {
+    "description": "Regras de negócio que podem ser testadas com os novos dados",
+    "rules": [
+      {
+        "rule": "Critério 1 - Atraso > 30 dias após 3 meses",
+        "testable": "Sim - há pagamentos com atrasos de 31-120 dias"
+      },
+      {
+        "rule": "Critério 2 - Atraso > 15 dias em 6 meses",
+        "testable": "Sim - há pagamentos com atrasos de 16-60 dias"
+      },
+      {
+        "rule": "Análise de padrões de pagamento por cliente",
+        "testable": "Sim - clientes com múltiplas transações"
+      },
+      {
+        "rule": "Impacto de pagamentos parciais na inadimplência",
+        "testable": "Sim - ~15% dos pagamentos são parciais"
+      },
+      {
+        "rule": "Análise por método de pagamento",
+        "testable": "Sim - 6 métodos diferentes implementados"
+      }
+    ]
+  }
+}
