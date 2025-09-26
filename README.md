@@ -191,7 +191,7 @@ Os dados melhorados introduzem cenários mais complexos que seu pipeline deve tr
 ## Entrega
 
 - **Repositório Git**:  
-  - A solução deve ser entregue através de um repositório Git. Faça um fork deste repositório e envie um pull request com a solução.
+  - A solução deve ser entregue através de um repositório Git. Faça uma cópia do repositório e envie do link do seu repositório com a solução.
   
 - **Prazo**:  
   - O prazo para a entrega da solução é de 7 dias a partir do recebimento do desafio.
